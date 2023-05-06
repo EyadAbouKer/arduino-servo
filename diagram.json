@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Eyad Eydo",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -4.12, "left": 20.59, "attrs": {} },
+    {
+      "type": "wokwi-microsd-card",
+      "id": "sd1",
+      "top": -135.38,
+      "left": 99.99,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": -56.05,
+      "left": 236.97,
+      "rotate": 270,
+      "attrs": { "travelLength": "30" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 81.68, "left": 372.6, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": 261.41, "left": 235.13, "attrs": {} }
+  ],
+  "connections": [
+    [ "sd1:DO", "uno:12", "green", [ "v0" ] ],
+    [ "sd1:GND", "uno:GND.1", "black", [ "v50.77", "h0.2" ] ],
+    [ "sd1:SCK", "uno:13", "green", [ "v0" ] ],
+    [
+      "sd1:VCC",
+      "uno:5V",
+      "red",
+      [
+        "v50.52",
+        "h-102.35",
+        "v37.95",
+        "h-11.68",
+        "v50.36",
+        "h12.41",
+        "v67.14",
+        "h-8.76",
+        "v53.28",
+        "h159.83"
+      ]
+    ],
+    [ "sd1:DI", "uno:11", "green", [ "v39.58", "h42.5" ] ],
+    [ "sd1:CS", "uno:10", "green", [ "v48.33", "h60.7" ] ],
+    [ "pot1:GND", "uno:GND.1", "black", [ "h-11.49", "v70.08", "h-155.95", "v25.2", "h-22.94" ] ],
+    [ "pot1:SIG", "uno:A0", "green", [ "v98.46", "h-123.2" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v107.28", "h-147.58" ] ],
+    [ "servo1:V+", "uno:5V", "green", [ "h-14.82", "v80.32", "h-176.35" ] ],
+    [ "servo1:GND", "uno:GND.3", "black", [ "h-32.45", "v96.43", "h-136.67" ] ],
+    [
+      "servo1:PWM",
+      "uno:9",
+      "green",
+      [ "h-7.1", "v-63.65", "h17.64", "v-197.3", "h-74.95", "v72.75", "h-131.16" ]
+    ],
+    [ "rtc1:GND", "uno:GND.2", "black", [ "h0" ] ],
+    [ "rtc1:5V", "uno:5V", "red", [ "h0" ] ],
+    [ "rtc1:SDA", "uno:A4", "green", [ "h-15.5", "v-45.14", "h39.08", "v3.78" ] ],
+    [ "rtc1:SCL", "uno:A5", "green", [ "h-23.07", "v-69.77", "h64.3" ] ]
+  ],
+  "dependencies": {}
+}
